@@ -12,6 +12,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -36,9 +37,15 @@ fun StreakIndicator(
 
         repeat(5) { index ->
 
-            val color by animateColorAsState(
-                if (index < streak)
+            val filledColor =
+                if (streak >= 5)
+                    Color(0xFFFFB300)
+                else
                     MaterialTheme.colorScheme.primary
+
+            val color by animateColorAsState(
+                targetValue = if (index < streak)
+                    filledColor
                 else
                     MaterialTheme.colorScheme.outline,
                 label = ""
@@ -50,7 +57,6 @@ fun StreakIndicator(
                 tint = color,
                 modifier = Modifier.size(28.dp)
             )
-
         }
 
     }

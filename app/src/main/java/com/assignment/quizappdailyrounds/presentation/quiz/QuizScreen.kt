@@ -72,7 +72,10 @@ fun QuizScreen(
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(uiState.message, color = Color.White)
+                    if(uiState.message.contains("Unable to resolve host"))
+                        Text("Try checking your internet", color = Color.White)
+                    else
+                        Text(uiState.message, color = Color.White)
 
                     Spacer(modifier = Modifier.height(12.dp))
 

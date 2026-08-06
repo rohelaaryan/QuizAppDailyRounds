@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -59,8 +60,8 @@ fun OptionCard(
     val backgroundColor by animateColorAsState(
         targetValue = when (state) {
             OptionState.NORMAL -> MaterialTheme.colorScheme.surfaceVariant
-            OptionState.CORRECT -> MaterialTheme.colorScheme.primary
-            OptionState.WRONG -> MaterialTheme.colorScheme.error
+            OptionState.CORRECT -> Color.Green
+            OptionState.WRONG -> Color.Red
         },
         label = ""
     )
@@ -68,8 +69,8 @@ fun OptionCard(
     val textColor by animateColorAsState(
         targetValue = when (state) {
             OptionState.NORMAL -> MaterialTheme.colorScheme.onSurfaceVariant
-            OptionState.CORRECT -> MaterialTheme.colorScheme.onPrimary
-            OptionState.WRONG -> MaterialTheme.colorScheme.onError
+            OptionState.CORRECT -> Color.Black
+            OptionState.WRONG -> Color.White
         },
         label = ""
     )
@@ -94,7 +95,7 @@ fun OptionCard(
             textAlign = TextAlign.Center,
             color = textColor,
             style = MaterialTheme.typography.bodyLarge,
-            fontWeight = FontWeight.Medium
+            fontWeight = FontWeight.SemiBold
         )
     }
 }
