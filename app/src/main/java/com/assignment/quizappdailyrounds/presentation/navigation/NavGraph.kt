@@ -52,7 +52,12 @@ fun QuizNavGraph() {
             QuizScreen(
                 viewModel = quizViewModel,
                 onQuizFinished = {
-                    navController.navigate(Screen.Result.route)
+                    navController.navigate(Screen.Result.route) {
+                        popUpTo(Screen.Quiz.route) {
+                            inclusive = true
+                        }
+                        launchSingleTop = true
+                    }
                 }
             )
 
@@ -63,14 +68,13 @@ fun QuizNavGraph() {
             ResultScreen(
                 viewModel = quizViewModel,
                 onRestart = {
-
                     quizViewModel.restartQuiz()
-
-                    navController.popBackStack(
-                        Screen.Quiz.route,
-                        inclusive = false
-                    )
-
+                    navController.navigate(Screen.Quiz.route) {
+                        popUpTo(Screen.Result.route) {
+                            inclusive = true
+                        }
+                        launchSingleTop = true
+                    }
                 }
             )
 
