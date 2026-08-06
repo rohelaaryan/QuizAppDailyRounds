@@ -1,6 +1,10 @@
 Quiz App – DailyRounds Assignment
 
-A modern Android Quiz application built using Kotlin, Jetpack Compose and MVVM Architecture. The app fetches quiz questions from a remote API, allows users to answer or skip questions, tracks quiz statistics such as correct answers and streaks and displays a summary on the result screen.
+##Demo Video
+https://drive.google.com/file/d/1Gj_nCcQj40zh_xLiUvgPBpu6ICk-ixrS/view?usp=sharing
+
+
+## A modern Android Quiz application built using Kotlin, Jetpack Compose and MVVM Architecture. The app fetches quiz questions from a remote API, allows users to answer or skip questions, tracks quiz statistics such as correct answers and streaks and displays a summary on the result screen.
 
 Features
 Splash Screen
